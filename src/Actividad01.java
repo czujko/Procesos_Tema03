@@ -20,10 +20,12 @@ public class Actividad01 {
         try {
             dir2 = InetAddress.getLocalHost();
             System.out.println("\tMetodo getLocalHost(): " + dir2);
-        } catch (UnknownHostException e) {e.printStackTrace();}
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
 
         // USAMOS METODOS DE LA CLASE
-        System.out.println("\tMetodo getHostName(): "+dir.getHostName());
+        System.out.println("\tMetodo getHostName(): " + dir.getHostName());
         System.out.println("\tMetodo getHostAddress(): " + dir.getHostAddress());
         System.out.println("\tMetodo toString(): " + dir.toString());
         System.out.println("\tMetodo getCanonicalHostName(): " +

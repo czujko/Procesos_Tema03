@@ -9,21 +9,21 @@ import java.util.Scanner;
 
 public class CutreNavegador {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String acumulador = "";
         try {
-            Scanner sc=new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
             System.out.println("Introduce la URL");
-            String direccion=sc.next().toLowerCase(Locale.ROOT);
+            String direccion = sc.next().toLowerCase(Locale.ROOT);
             direccion = (direccion.substring(0, 8).equals("https://")) ? direccion : "https://" + direccion;
 
-            URL miurl=new URL(direccion);
-            InputStream inputStream=miurl.openStream();
-            BufferedReader br=new BufferedReader(new InputStreamReader(inputStream));
+            URL miurl = new URL(direccion);
+            InputStream inputStream = miurl.openStream();
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             String linea;
-            while((linea=br.readLine()) != null){
+            while ((linea = br.readLine()) != null) {
                 System.out.println(linea);
-                acumulador= acumulador + linea;
+                acumulador = acumulador + linea;
             }
             br.close();
             inputStream.close();
