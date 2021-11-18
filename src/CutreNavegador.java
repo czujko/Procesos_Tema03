@@ -33,10 +33,16 @@ public class CutreNavegador {
             e.printStackTrace();
         }
 
-        int posicion = acumulador.indexOf("<title>");
-        int posicion2 = acumulador.indexOf("</title>");
-        String titulo = acumulador.substring(posicion + 7, posicion2);
-        System.out.println("Título: " + titulo);
+        /*int posicion = acumulador.indexOf("<img src=\"");
+        int posicion2 = acumulador.indexOf(">");
+        String titulo = acumulador.substring(posicion + 9, posicion2);
+        System.out.println("Título: " + titulo);*/
+
+        int posicion=acumulador.indexOf("<img src=\"")+10;
+        int posicion2=acumulador.indexOf("\"", posicion);
+        String imagen=acumulador.substring(posicion, posicion2);
+        System.out.println("---------------------");
+        System.out.println(imagen);
 
 
     }
